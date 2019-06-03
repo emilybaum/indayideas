@@ -1,4 +1,17 @@
 // create a firebase database for location and event type engagement
+var firebaseConfig = {
+    apiKey: "AIzaSyAWW7bDrI4Yw5hRJEdVCqi6codGz-709LE",
+    authDomain: "inday-ideas.firebaseapp.com",
+    databaseURL: "https://inday-ideas.firebaseio.com",
+    projectId: "inday-ideas",
+    storageBucket: "",
+    messagingSenderId: "221292517606",
+    appId: "1:221292517606:web:1b47839c8d5ce0a3"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+var database = firebase.database();
 
 var onsiteLocation = [
     {
@@ -62,51 +75,21 @@ var virtualLocation = [
     },
 ];
 
-$("#generate-ideas").on("click", myFunction)
-function myFunction() {
-    var elements = document.getElementById("indayForm").elements;
-    var obj = {};
-    for (var i = 0; i < elements.length; i++) {
-        var item = elements.item(i);
-        obj[item.name] = item.value;
-    }
+$("#generate-ideas").on("click", getInputs)
 
-    document.getElementById("indayIdeas-display").innerHTML = JSON.stringify(obj);
+function getInputs() {
+    // use value
+    // use name
+    // #indayForm
+
+    // how to capture the onsite, virtual, and offsite inputs???
 }
 
 
 
-// var x = document.getElementById("indayForm").elements.length;
-// console.log("window " + x)
-
-// $("#generate-ideas").on("click", function (event) {
-
-//     var x1 = document.getElementById("indayForm").elements.length;
-//     console.log("click " + x1[3])
-//     event.preventDefault();
-    // var onsiteInput = document.getElementById("indayForm").elements.namedItem("onsite").value;
-    // var onsiteInput = document.forms['indayForm'].elements['onsite'];
-
-    //     alert("this is the input " + onsiteInput[0].value)
-    
-    // var virtualInput = document.getElementById("indayForm").elements.namedItem("virtual").value;
-    // var offsiteInput = document.getElementById("indayForm").elements.namedItem("offsite").value;
-
-    // if (onsiteInput === true) {
-    //     // display only onsite detials 
-    //     alert("this is the onsite alert")
-    // }
-    // if (virtualInput === true) {
-    //     // display only onsite detials 
-    //     alert("this is the virtual alert")
-    // }
-    // if (offsiteInput === true) {
-    //     // display only onsite detials 
-    //     alert("this is the offsite alert")
-    // }
 
 
-// });
+
 
 
 
@@ -118,7 +101,6 @@ function myFunction() {
 
 // OTHER CONSIDERATIONS
 // cost vs free
-
 
 // WHAT THE USER CAN SEE/DO
 // have a check mark box for onsite, offsite, virtual
