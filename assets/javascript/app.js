@@ -62,17 +62,28 @@ var virtualLocation = [
     },
 ];
 
-var x = document.getElementById("indayForm").elements.length;
-console.log("window " + x)
-$("#generate-ideas").on("click", displayIndayIdeas);
+$("#generate-ideas").on("click", myFunction)
+function myFunction() {
+    var elements = document.getElementById("indayForm").elements;
+    var obj = {};
+    for (var i = 0; i < elements.length; i++) {
+        var item = elements.item(i);
+        obj[item.name] = item.value;
+    }
+
+    document.getElementById("indayIdeas-display").innerHTML = JSON.stringify(obj);
+}
 
 
 
-// capture on click value details 
-function displayIndayIdeas(event) {
-    var x1 = document.getElementById("indayForm").elements.length;
-    console.log("click " + x1)
-    event.preventDefault();
+// var x = document.getElementById("indayForm").elements.length;
+// console.log("window " + x)
+
+// $("#generate-ideas").on("click", function (event) {
+
+//     var x1 = document.getElementById("indayForm").elements.length;
+//     console.log("click " + x1[3])
+//     event.preventDefault();
     // var onsiteInput = document.getElementById("indayForm").elements.namedItem("onsite").value;
     // var onsiteInput = document.forms['indayForm'].elements['onsite'];
 
@@ -95,7 +106,7 @@ function displayIndayIdeas(event) {
     // }
 
 
-}
+// });
 
 
 
