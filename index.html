@@ -7,12 +7,71 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/javascript/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <title>InDay Ideas</title>
 </head>
 <body>
-    <h1>InDay Idea Generator</h1>
-    <h2>for managers</h2>
+    <div class="container">
+        
+        <h1>InDay Idea Generator</h1>
+        <h2>for managers</h2>
+
+<!-- 
+    What office are you in?
+        (drop-down list)
+
+    Pick your event type (with check box)
+        - onsite
+        - offsite
+        - virtual
+
+-------------------------------------
+
+    THIS MONTH InDay is coming up - show me all the InDay ideas for THIS MONTH
+        (generates all of THIS MONTH)
     
+    Want to plan ahead? Pick a month you are interested in seeing event ideas for
+ -->
+
+        <form id="indayForm" class="needs-validation">
+
+                <div class="col-md-4 mb-3">
+                    <label>Which office are you in?</label>
+                    <input type="text" class="form-control" id="location-input" placeholder="Enter your location" value="" required>
+                    <!-- <select class="custom-select">
+                        <option selected>Pick your office</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select> -->
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <!-- <label for="validationCustom02">What kind of event options do you want to generate?</label> -->
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1" name="onsite" value="true">
+                        <label class="custom-control-label" for="customSwitch1">Onsite</label>
+                    </div>
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch2" name="virtual"  valueTF="true">
+                        <label class="custom-control-label" for="customSwitch2">Virtual</label>
+                    </div>
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch3" name="offsite" valueTF="true">
+                        <label class="custom-control-label" for="customSwitch3">Offsite</label>
+                    </div>
+                </div>
+
+            <button class="btn btn-primary" type="submit" id="generate-ideas">Submit form</button>
+        </form>
+
+        <div id="indayIdeas-display"></div>
+        <!-- dynamically create cards with the event name, detials to execute, and month that the event goes best with -->
+        
+
+    </div>
+    <script src="assets/javascript/app.js"></script>
+
 </body>
 </html>
