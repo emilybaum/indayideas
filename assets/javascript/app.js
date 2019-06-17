@@ -78,12 +78,16 @@ var virtualLocation = [
 $("#generate-ideas").on("click", getInputs)
 
 function getInputs() {
+    event.preventDefault();
+    console.log("hi")
     // use value
     // use name
     // #indayForm
 
     // how to capture the onsite, virtual, and offsite inputs???
+    
 }
+
 
 
 

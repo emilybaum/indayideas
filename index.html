@@ -4,75 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#config-web-app -->
     
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    
     <title>InDay Ideas</title>
 </head>
 <body>
+    <!-- 
+        What office are you in?
+            (drop-down list)
+    
+        Pick your event type (with check box)
+            - onsite
+            - offsite
+            - virtual
+    
+    ------------------------------------- 
+    -->
+
     <div class="container">
         
         <h1>InDay Idea Generator</h1>
         <h2>for managers</h2>
 
-<!-- 
-    What office are you in?
-        (drop-down list)
-
-    Pick your event type (with check box)
-        - onsite
-        - offsite
-        - virtual
-
--------------------------------------
-
-    THIS MONTH InDay is coming up - show me all the InDay ideas for THIS MONTH
-        (generates all of THIS MONTH)
-    
-    Want to plan ahead? Pick a month you are interested in seeing event ideas for
- -->
-
-        <form id="indayForm">
-
-                <div class="col-md-4 mb-3">
-                    <label>Which office are you in?</label>
-                    <input type="text" class="form-control" id="location-input" placeholder="Enter your location">
-                    <!-- still want to add a <select> element for all office locations -->
-                </div>
-
-                <div class="col-md-4 mb-3">
-                    <label>What kind of event options do you want to generate?</label>
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch1" name="onsite" value="">
-                        <label class="custom-control-label" for="customSwitch1">Onsite</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch2" name="virtual"  value="">
-                        <label class="custom-control-label" for="customSwitch2">Virtual</label>
-                    </div>
-                    <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="customSwitch3" name="offsite" value="">
-                        <label class="custom-control-label" for="customSwitch3">Offsite</label>
-                    </div>
-                </div>
-
-            <button class="btn btn-primary" type="submit" id="generate-ideas">Submit form</button>
-        </form>
-
+        <button class="btn btn-primary" type="submit" id="generate-ideas">Submit form</button>
+      
         <div id="indayIdeas-display"></div>
-        <!-- dynamically create cards with the event name, detials to execute, and month that the event goes best with -->
         
-
     </div>
+
+
+
+
+
+
+
+    <!-- Dragula -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/dragula/$VERSION/dragula.min.js'></script>
+    
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- Javascript -->
     <script src="assets/javascript/app.js"></script>
 
 </body>
