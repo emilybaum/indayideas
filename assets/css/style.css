@@ -22,3 +22,8 @@
   filter: alpha(opacity=20);
 }
 
+
+.selected {
+  background: green;
+  border: green;
+}

@@ -12,6 +12,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
+// store clicks for onsite, offsite, virtual in database
 
 var onsiteLocation = [
     {
@@ -75,18 +76,71 @@ var virtualLocation = [
     },
 ];
 
+
+
+// variables for selections made
+var onsiteSelected = false;
+var offsiteSelected = false;
+var virtualSelected = false;
+
+var officeLocation = "";
+var officeLocationIndex = "";
+
+// selecting the button inputs
+document.getElementById("onsite-button").addEventListener("click", function () {
+    if (onsiteSelected === false) {
+        onsiteSelected = true;
+        $("#onsite-button").addClass("selected")
+    }
+    else if (onsiteSelected === true) {
+        onsiteSelected = false;
+        $("#onsite-button").removeClass("selected")
+    }   
+});
+
+document.getElementById("offsite-button").addEventListener("click", function () {
+    if (offsiteSelected === false) {
+        offsiteSelected = true;
+        $("#offsite-button").addClass("selected")
+    }
+    else if (offsiteSelected === true) {
+        offsiteSelected = false;
+        $("#offsite-button").removeClass("selected")
+    }
+});
+
+document.getElementById("virtual-button").addEventListener("click", function () {
+    if (virtualSelected === false) {
+        virtualSelected = true;
+        $("#virtual-button").addClass("selected")
+    }
+    else if (virtualSelected === true) {
+        virtualSelected = false;
+        $("#virtual-button").removeClass("selected")
+    }
+});
+
+
 $("#generate-ideas").on("click", getInputs)
 
 function getInputs() {
     event.preventDefault();
-    console.log("hi")
-    // use value
-    // use name
-    // #indayForm
-
-    // how to capture the onsite, virtual, and offsite inputs???
+    officeLocation = $(this).val();
     
+    var i = document.getElementById("locationSelector").selectedIndex;
+    var location = document.getElementById("locationSelector").options;
+    officeLocation = location[i].text
+    officeLocationIndex = location[i].index
+
+    generateIdeas()
 }
+
+function generateIdeas() {
+    if (onsiteSelected !== true && offsiteSelected !== true && virtualSelected !== true) {
+        $("#validate-form").removeClass("d-none")
+    }
+}
+
 
 
 
