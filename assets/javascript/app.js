@@ -84,7 +84,7 @@ var offsiteSelected = false;
 var virtualSelected = false;
 
 var officeLocation = "";
-var officeLocationIndex = "";
+var officeLocationIndex = 0;
 
 // selecting the button inputs
 document.getElementById("onsite-button").addEventListener("click", function () {
@@ -125,20 +125,55 @@ $("#generate-ideas").on("click", getInputs)
 
 function getInputs() {
     event.preventDefault();
-    officeLocation = $(this).val();
-    
-    var i = document.getElementById("locationSelector").selectedIndex;
+   
+    var x = document.getElementById("locationSelector").selectedIndex;
     var location = document.getElementById("locationSelector").options;
-    officeLocation = location[i].text
-    officeLocationIndex = location[i].index
+    officeLocation = location[x].text
+    officeLocationIndex = location[x].index
 
+    if (officeLocationIndex === 0) {
+        $("#validate-location").removeClass("d-none")
+        return;
+    }
     generateIdeas()
 }
 
 function generateIdeas() {
+    $("#validate-location").addClass("d-none")
     if (onsiteSelected !== true && offsiteSelected !== true && virtualSelected !== true) {
-        $("#validate-form").removeClass("d-none")
+        $("#validate-event").removeClass("d-none")
+        return;
     }
+    else if (onsiteSelected === true) {
+        // show onsite events
+        showOnsite();
+    }
+    else if (offsiteSelected === true) {
+        // show offsite events
+        showOffsite();
+    }
+    else if (virtualSelected === true) {
+        // show virtual events
+        showVirtual();
+    }
+    removeValidation()
+}
+
+function removeValidation() {
+    $("#validate-location").addClass("d-none");
+    $("#validate-event").addClass("d-none");
+}
+
+function showOnsite() {
+
+}
+
+function showOffsite() {
+
+}
+
+function showVirtual() {
+
 }
 
 

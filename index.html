@@ -46,7 +46,7 @@
                     
                     <label for="locationSelector">What office are you in?</label>
                     <select class="form-control" id="locationSelector">
-                        <option value="">select your office</option>
+                        <option value="none">select your office</option>
                         <option value="South Bay HQ">South Bay HQ</option>
                         <option value="San Francisco">San Francisco</option>
                         <option value="Chicago">Chicago</option>
@@ -67,14 +67,17 @@
                     
                     <label for="exampleFormControlTextarea1">What kind of event?</label>
                     <div class="d-flex justify-content-around event-options">
-                        <button id="onsite-button" type="button" class="p-3 btn btn-dark">Onsite</button>
-                        <button id="offsite-button" type="button" class="p-3 btn btn-dark">Offsite</button>
-                        <button id="virtual-button" type="button" class="p-3 btn btn-dark">Virtual</button>
+                        <button id="onsite-button" type="button" class="btn btn-dark button-eb">Onsite</button>
+                        <button id="offsite-button" type="button" class="btn btn-dark button-eb">Offsite</button>
+                        <button id="virtual-button" type="button" class="btn btn-dark button-eb">Virtual</button>
                     </div>
                     
                 </div>
                 <button class="btn btn-primary" type="submit" id="generate-ideas">Generate Ideas</button>
-                <small id="validate-form" class="validation d-none">You must select what kind of event first</small>
+                <div>
+                    <small id="validate-event" class="validation d-none">You must select what kind of event first</small>
+                    <small id="validate-location" class="validation d-none">You must select your office first</small>
+                </div>
             </form>
             
             

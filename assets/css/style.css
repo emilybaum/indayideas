@@ -22,8 +22,15 @@
   filter: alpha(opacity=20);
 }
 
+.button-eb {
+  width: 30%;
+}
 
 .selected {
   background: green;
   border: green;
+}
+
+.validation {
+  color: red;
 }
