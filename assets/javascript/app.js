@@ -156,12 +156,31 @@ function generateIdeas() {
         // show virtual events
         showVirtual();
     }
-    removeValidation()
+    // removeValidation()
+    animateCSS("#input-form", "zoomOutUp", removeValidation)
 }
 
+// removes the validation text and hides the whole form
 function removeValidation() {
     $("#validate-location").addClass("d-none");
     $("#validate-event").addClass("d-none");
+    $("#input-form").addClass("d-none");
+ 
+}
+
+// runs the animation to slide the form out of view
+function animateCSS(element, animationName, callback) {
+    const node = document.querySelector(element)
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
 }
 
 function showOnsite() {
