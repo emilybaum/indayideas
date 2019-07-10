@@ -61,14 +61,12 @@
                         <option value="Toronto">Toronto</option>
                         <option value="Sao Paulo">Sao Paulo</option>
                         <option value="Remote">Remote</option>
-
                     </select>
-
                 </div>
 
                 <div class="form-group">
                     
-                    <label for="exampleFormControlTextarea1">What kind of event?</label>
+                    <label for="eventType">What kind of event?</label>
                     <div class="d-flex justify-content-around event-options">
                         <button id="onsite-button" type="button" class="btn btn-dark button-eb">Onsite</button>
                         <button id="offsite-button" type="button" class="btn btn-dark button-eb">Offsite</button>
@@ -89,7 +87,59 @@
     </div>
     <div class="row">
         <div class="col-md-12 mx-auto">
-            <div id="indayIdeas-display" class="text-center">GENERATION</div>
+            <div id="indayIdeas-display" class="d-none">
+                
+                <!-- <h2>example card</h2> -->
+                <div class="card inday-card">
+                    <div class="card-body">
+                        <div class="main-card-content">
+                            <h5 id="event-name" class="card-title">Event Name</h5>
+                            <h6 id="inday-theme" class="card-subtitle mb-2 text-muted">InDay Theme</h6>
+                            <p id="details-to-execute" class="card-text">____detials to execute____.</p>
+                            <p id="event-duration" class="card-text">____duration____.</p>
+                            <p id="event-prep" class="card-text">____prep needed____.</p>
+                            <p id="event-cost" class="card-text">____cost per person____.</p>
+                        </div>
+
+                        <div class="main-card-content">
+                            <div class="count-div">
+                                <p class="count-p">Engagement Count: <span id="count-span">0</span></p>
+                            </div>
+
+                            <input class="mx-auto btn btn-outline-secondary clickable-card-content" type="button" value="Love this idea">
+                            <a class="mx-auto btn btn-outline-secondary clickable-card-content" href="#" role="button">Send this to me in an email</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card inday-card">
+                    <div class="card-body">
+                        <div class="main-card-content">
+                            <h5 id="event-name" class="card-title">Event Name</h5>
+                            <h6 id="inday-theme" class="card-subtitle mb-2 text-muted">InDay Theme</h6>
+                            <p id="details-to-execute" class="card-text">____detials to execute____.</p>
+                            <p id="event-duration" class="card-text">____duration____.</p>
+                            <p id="event-prep" class="card-text">____prep needed____.</p>
+                            <p id="event-cost" class="card-text">____cost per person____.</p>
+                        </div>
+                
+                        <div class="main-card-content">
+                            <div class="count-div">
+                                <p class="count-p">Engagement Count: <span id="count-span">0</span></p>
+                            </div>
+                
+                            <input class="mx-auto btn btn-outline-secondary clickable-card-content" type="button"
+                                value="Love this idea">
+                            <a class="mx-auto btn btn-outline-secondary clickable-card-content" href="#" role="button">Send this to me
+                                in an email</a>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end indayIdeas-display -->
+
+            <!-- show more button -->
+            <button class="btn btn-primary mx-auto" type="submit" id="show-more">Show more</button>
+
         </div>
     </div>
 </div>

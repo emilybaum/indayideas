@@ -20,60 +20,43 @@ var onsiteLocation = [
         detailsToExecute: "book a conference room and talk about it",
         indayTheme: 'January "Vision"',
         eventDuration: '1 hour',
-        eventPrep: '15 min'
-    },
-    {
-        event: '',
-        detailsToExecute: '',
-        indayTheme: '',
-        timeCommitment: '',
-    },
-    {
-        event: '',
-        detailsToExecute: '',
-        indayTheme: '',
-        timeCommitment: '',
-    },
+        eventPrep: '15 min',
+        cost: '~$15 per person'
+    }
 ];
+
 var offsiteLocation = [
     {
-        event: '',
-        detailsToExecute: '',
-        indayTheme: '',
-        timeCommitment: '',
+        event: 'Brainstorm the year ahead by asking your team, “What do you want to accomplish as a team?”',
+        detailsToExecute: "book a conference room and talk about it",
+        indayTheme: 'January "Vision"',
+        eventDuration: '1 hour',
+        eventPrep: '15 min',
+        cost: '~$15 per person'
     },
     {
         event: '',
         detailsToExecute: '',
         indayTheme: '',
         timeCommitment: '',
-    },
-    {
-        event: '',
-        detailsToExecute: '',
-        indayTheme: '',
-        timeCommitment: '',
-    },
+    }
 ];
+
 var virtualLocation = [
     {
-        event: '',
-        detailsToExecute: '',
-        indayTheme: '',
-        timeCommitment: '',
+        event: 'Brainstorm the year ahead by asking your team, “What do you want to accomplish as a team?”',
+        detailsToExecute: "book a conference room and talk about it",
+        indayTheme: 'January "Vision"',
+        eventDuration: '1 hour',
+        eventPrep: '15 min',
+        cost: '~$15 per person'
     },
     {
         event: '',
         detailsToExecute: '',
         indayTheme: '',
         timeCommitment: '',
-    },
-    {
-        event: '',
-        detailsToExecute: '',
-        indayTheme: '',
-        timeCommitment: '',
-    },
+    }
 ];
 
 
@@ -96,6 +79,9 @@ document.getElementById("onsite-button").addEventListener("click", function () {
         onsiteSelected = false;
         $("#onsite-button").removeClass("selected")
     }   
+    else {
+        console.log("no selection made")
+    }
 });
 
 document.getElementById("offsite-button").addEventListener("click", function () {
@@ -106,6 +92,9 @@ document.getElementById("offsite-button").addEventListener("click", function () 
     else if (offsiteSelected === true) {
         offsiteSelected = false;
         $("#offsite-button").removeClass("selected")
+    }
+    else {
+        console.log("no selection made")
     }
 });
 
@@ -118,7 +107,11 @@ document.getElementById("virtual-button").addEventListener("click", function () 
         virtualSelected = false;
         $("#virtual-button").removeClass("selected")
     }
+    else {
+        console.log("no selection made")
+    }
 });
+
 
 
 $("#generate-ideas").on("click", getInputs)
@@ -156,17 +149,9 @@ function generateIdeas() {
         // show virtual events
         showVirtual();
     }
-    // removeValidation()
-    animateCSS("#input-form", "zoomOutUp", removeValidation)
+    animateCSS("#input-form", "zoomOutUp", displayIdeas)
 }
 
-// removes the validation text and hides the whole form
-function removeValidation() {
-    $("#validate-location").addClass("d-none");
-    $("#validate-event").addClass("d-none");
-    $("#input-form").addClass("d-none");
- 
-}
 
 // runs the animation to slide the form out of view
 function animateCSS(element, animationName, callback) {
@@ -183,16 +168,29 @@ function animateCSS(element, animationName, callback) {
     node.addEventListener('animationend', handleAnimationEnd)
 }
 
-function showOnsite() {
+function displayIdeas() {
+    if (onsiteSelected) {
+        showOnsite();
+    }
+    else if (offsiteSelected) {
+        showOffsite();
+    }
+    else if (virtualSelected) {
+        showVirtual();
+    }
+}
 
+function showOnsite() {
+    $("#indayIdeas-display").removeClass("d-none")
+    console.log("onsite selected and generated displayed");
 }
 
 function showOffsite() {
-
+    console.log("offsite selected and generated displayed");
 }
 
 function showVirtual() {
-
+    console.log("virtual selected and generated displayed");
 }
 
 
